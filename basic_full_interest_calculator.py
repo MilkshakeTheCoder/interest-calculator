@@ -11,6 +11,16 @@ import math
 # Use PyPlot to graph per year and rate all that
 
 def si():
+    siback = input("Do you want to compute simple interest? y/n: ")
+    if siback == "y":
+        print("Ok, continuing... ")
+    elif siback == "n":
+        print("Ok, sending you back...")
+        setup()
+    elif siback == "exit":
+        exit()
+    else:
+        print("I'm taking that as a yes and continuing...")
     p = int(input("What is your depoist/initial amount? "))
     r = float(input("What is your interest rate as a percentage? "))
     rr=float(r/100)
