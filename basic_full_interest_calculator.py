@@ -51,7 +51,7 @@ def nc():
     rr = float(r/100)
     n = int(input("How many times is your money being compounded per year (1, 2, 4, 12, 52, 365)? "))
     ct = int(input("How long (in years) has this been compounding? "))
-    # i changed t to ct because if I am to reuse this varible via a function in the future, it should not be confused with t, which is for simple, not compounded interest. it has been changed for nc and cc.
+    # t changed to ct because if I am to reuse this varible via a function in the future, it should not be confused with t, which is for simple, not compounded interest. it has been changed for nc and cc.
     final = (p*((1+(rr/n))**(n*ct)))
     print(f"Your balance after {ct} years, with an interest rate of {rr*100}% and a compounding rate of {n} times a year, is ${round(final, 2)}")
 
