@@ -1,7 +1,14 @@
 import math
 
+
+# CURRENT: --V
 # Solves for balance (A) with given rate, principal, time, (optionally: compound rate).
 # Complex full interest calc will have ability to solve for variables other than A.
+
+# TO-DO: --V
+# Add a monthly/yearly report feature
+# Reuse variables via function
+# Use PyPlot to graph per year and rate all that
 
 def si():
     p = int(input("What is your depoist/initial amount? "))
@@ -9,7 +16,19 @@ def si():
     rr=float(r/100)
     t = int(input("How long has this interest been applied (in years)? "))
     final = (p*(1+(rr*t)))
-    print(f"Your balance after {t} years and an interest rate of {rr*100}%, is ${round(final, 2)}")
+    def si_check():
+        finalq = input(f"You had a principal amount of ${p}, an interest rate of {rr*100}%, and this rate has been applied for {t} years. Is this correct? y/n: ")
+        if finalq == "y":
+            print(f"\n--------------------> Your new balance would be ${round(final, 2)}\n")
+        elif finalq == "n":
+            print("\n--------------------> Looks like some of the information was incorrectly typed. Please try again.\n")
+            si()
+        elif finalq == "exit":
+            exit()
+        else:
+            print("\n--------------------> You didn't quite inform me if this is correct or not.\n")
+            si_check()
+    si_check()
 
 def nc():
     p = int(input("What is your depoist/initial amount? "))
