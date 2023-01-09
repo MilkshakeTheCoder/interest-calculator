@@ -9,6 +9,7 @@ import math
 # Add a monthly/yearly report feature
 # Reuse variables via function
 # Use PyPlot to graph per year and rate all that
+# Add back and check functions to cc() and nc().
 
 def si():
     # Asks user just confirming that they wanted simple interest not compounded.
