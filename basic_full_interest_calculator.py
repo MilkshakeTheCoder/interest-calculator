@@ -11,6 +11,7 @@ import math
 # Use PyPlot to graph per year and rate all that
 
 def si():
+    # Asks user just confirming that they wanted simple interest not compounded.
     siback = input("Do you want to compute simple interest? y/n: ")
     if siback == "y":
         print("Ok, continuing... ")
@@ -21,11 +22,14 @@ def si():
         exit()
     else:
         print("I'm taking that as a yes and continuing...")
+    # Gathering values...
     p = int(input("What is your depoist/initial amount? "))
     r = float(input("What is your interest rate as a percentage? "))
     rr=float(r/100)
     t = int(input("How long has this interest been applied (in years)? "))
+    # Interest eqaution.
     final = (p*(1+(rr*t)))
+    # Checking if the values inputted are correct --V
     def si_check():
         finalq = input(f"You had a principal amount of ${p}, an interest rate of {rr*100}%, and this rate has been applied for {t} years. Is this correct? y/n: ")
         if finalq == "y":
