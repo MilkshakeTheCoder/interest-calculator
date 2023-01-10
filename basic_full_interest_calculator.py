@@ -17,7 +17,7 @@ def si():
     if siback == "y":
         print("Ok, continuing... ")
     elif siback == "n":
-        print("Ok, sending you back...")
+        print("Ok, sending you back...\n")
         setup()
     elif siback == "exit":
         exit()
@@ -46,14 +46,41 @@ def si():
     si_check()
 
 def nc():
+    # Asks user just confirming that they wanted simple interest not compounded.
+    ncback = input("Do you want to compute non-continual compounded interest? y/n: ")
+    if ncback == "y":
+        print("Ok, continuing... ")
+    elif ncback == "n":
+        print("Ok, sending you back...\n")
+        setup()
+    elif ncback == "exit":
+        exit()
+    else:
+        print("I'm taking that as a yes and continuing...")
     p = int(input("What is your depoist/initial amount? "))
     r = float(input("What is your interest rate as a percentage? "))
     r = float(r/100)
     n = int(input("How many times is your money being compounded per year (1, 2, 4, 12, 52, 365)? "))
     ct = int(input("How long (in years) has this been compounding? "))
     # t changed to ct because if I am to reuse this varible via a function in the future, it should not be confused with t, which is for simple, not compounded interest. it has been changed for nc and cc.
+    # Non-Continual Compound Equation:
     final = (p*((1+(r/n))**(n*ct)))
-    print(f"Your balance after {ct} years, with an interest rate of {r*100}% and a compounding rate of {n} times a year, is ${round(final, 2)}")
+    # Checking if the values inputted are correct --V
+    def nccheck():
+        finalq = input(f"You had a principal amount of ${p}, an interest rate of {r*100}%, this rate has been applied for {ct} years, and this money has been compounding {n} times per year. Is this correct? y/n: ")
+        if finalq == "y":
+            print(f"\n--------------------> Your new balance would be ${round(final, 2)}\n")
+            print("\n-------------------- Running again. Type exit to end the program. --------------------\n")
+            setup()
+        elif finalq == "n":
+            print("\n--------------------> Looks like some of the information was incorrectly typed. Please try again.\n")
+            si()
+        elif finalq == "exit":
+            exit()
+        else:
+            print("\n--------------------> You didn't quite inform me if this is correct or not.\n")
+            nccheck()
+    nccheck()
 
 def cc():
     p = int(input("What is your depoist/initial amount? "))
@@ -72,7 +99,7 @@ def compoundfunc():
         nc()
     elif setupvar2 == "reset":
         setup()
-    elif setupvar2 == "exit" or "Exit":
+    elif setupvar2 == "exit":
         exit()
     else:
         print("Is that a y or n? Doesn't look like it.")
@@ -84,6 +111,8 @@ def setup():
         si()
     elif setupvar == "c":
         compoundfunc()
+    elif setupvar == "exit":
+        exit()
     else:
         print(f"I don't think {setupvar} is a interest type.")
         setup()
