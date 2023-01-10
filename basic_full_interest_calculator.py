@@ -10,6 +10,7 @@ import math
 # Reuse variables via function
 # Use PyPlot to graph per year and rate all that
 # Add back and check functions to cc() and nc().
+# Possibly add "modes" for different types of interest, so that the user doesn't have to constantly fill out the y/n answers.
 
 def si():
     # Asks user just confirming that they wanted simple interest not compounded.
@@ -46,7 +47,7 @@ def si():
     si_check()
 
 def nc():
-    # Asks user just confirming that they wanted simple interest not compounded.
+    # Confirmation.
     ncback = input("Do you want to compute non-continual compounded interest? y/n: ")
     if ncback == "y":
         print("Ok, continuing... ")
@@ -83,13 +84,38 @@ def nc():
     nccheck()
 
 def cc():
+    # Asks user just confirming that they wanted simple interest not compounded.
+    ccback = input("Do you want to compute continually compounded interest? y/n: ")
+    if ccback == "y":
+        print("Ok, continuing... ")
+    elif ccback == "n":
+        print("Ok, sending you back...\n")
+        setup()
+    elif ccback == "exit":
+        exit()
+    else:
+        print("I'm taking that as a yes and continuing...")
     p = int(input("What is your depoist/initial amount? "))
     r = float(input("What is your interest rate as a percentage? "))
     r = float(r/100)
     e = math.e
     ct = int(input("How long (in years) has this been compounding? "))
     final = (p*(e**(r*ct)))
-    print(f"Your balance after {ct} years, with an interest rate of {r*100}% and continuous compounding, is ${round(final, 2)}")
+    def cccheck():
+        finalq = input(f"You had a principal amount of ${p}, an interest rate of {r*100}%, this rate has been applied for {ct} years, and this money has been compounding continually. Is this correct? y/n: ")
+        if finalq == "y":
+            print(f"\n--------------------> Your new balance would be ${round(final, 2)}\n")
+            print("\n-------------------- Running again. Type exit to end the program. --------------------\n")
+            setup()
+        elif finalq == "n":
+            print("\n--------------------> Looks like some of the information was incorrectly typed. Please try again.\n")
+            si()
+        elif finalq == "exit":
+            exit()
+        else:
+            print("\n--------------------> You didn't quite inform me if this is correct or not.\n")
+            cccheck()
+    cccheck()
 
 def compoundfunc():
     setupvar2 = input("Are you compounding continuously? y/n: ")
@@ -106,7 +132,7 @@ def compoundfunc():
         compoundfunc()
 
 def setup():
-    setupvar=input("What interest are you calculating today? Simple or Compounded? (s or c) ")
+    setupvar=input("What interest are you calculating? Simple or Compounded? (s or c) ")
     if setupvar == "s":
         si()
     elif setupvar == "c":
