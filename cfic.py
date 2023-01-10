@@ -17,6 +17,13 @@ import matplotlib.pyplot as plt
 # Use PyPlot to graph per year and rate all that
 # Possibly add "modes" for different types of interest, so that the user doesn't have to constantly fill out the y/n answers.
 
+# Values p and r get used a lot, so i made a function call for them.
+def pr():
+    p = int(input("What is your depoist/initial amount? "))
+    r = float(input("What is your interest rate as a percentage? "))
+    r=float(r/100)
+    return p, r
+
 def si():
     # Asks user just confirming that they wanted simple interest not compounded.
     siback = input("Do you want to compute simple interest? y/n: ")
@@ -30,9 +37,7 @@ def si():
     else:
         print("I'm taking that as a yes and continuing...")
     # Gathering values...
-    p = int(input("What is your depoist/initial amount? "))
-    r = float(input("What is your interest rate as a percentage? "))
-    r=float(r/100)
+    p,r = pr()
     t = int(input("How long has this interest been applied (in years)? "))
     # Interest eqaution.
     final = (p*(1+(r*t)))
@@ -63,9 +68,7 @@ def nc():
         exit()
     else:
         print("I'm taking that as a yes and continuing...")
-    p = int(input("What is your depoist/initial amount? "))
-    r = float(input("What is your interest rate as a percentage? "))
-    r = float(r/100)
+    p,r = pr()
     n = int(input("How many times is your money being compounded per year (1, 2, 4, 12, 52, 365)? "))
     ct = int(input("How long (in years) has this been compounding? "))
     # t changed to ct because if I am to reuse this varible via a function in the future, it should not be confused with t, which is for simple, not compounded interest. it has been changed for nc and cc.
@@ -100,9 +103,7 @@ def cc():
         exit()
     else:
         print("I'm taking that as a yes and continuing...")
-    p = int(input("What is your depoist/initial amount? "))
-    r = float(input("What is your interest rate as a percentage? "))
-    r = float(r/100)
+    p,r = pr()
     e = math.e
     ct = int(input("How long (in years) has this been compounding? "))
     final = (p*(e**(r*ct)))
