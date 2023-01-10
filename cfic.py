@@ -5,6 +5,7 @@
 
 import math
 import matplotlib.pyplot as plt
+import error
 
 # CURRENT: --V
 # Solves for balance (A) with given rate, principal, time, (optionally: compound rate).
