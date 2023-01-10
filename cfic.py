@@ -4,7 +4,7 @@
 # C: Calculator
 
 import math
-
+import matplotlib.pyplot as plt
 
 # CURRENT: --V
 # Solves for balance (A) with given rate, principal, time, (optionally: compound rate).
