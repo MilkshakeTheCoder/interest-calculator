@@ -11,6 +11,7 @@ from formulas import *
 # Solves for balance (A) with given rate, principal, time, (optionally: compound rate).
 # Complex full interest calc will have ability to solve for variables other than A.
 # Back and check functions to cc() and nc(), to ensure the user actually wants to do that, and so they don't have to exit to restart.
+# Importing formulas separately.
 
 # TO-DO: --V
 # Add a monthly/yearly report feature
@@ -18,7 +19,6 @@ from formulas import *
 # Use PyPlot to graph per year and rate all that
 # Possibly add "modes" for different types of interest, so that the user doesn't have to constantly fill out the y/n answers.
 # Add Error Handler
-# Make the value gathering a function.
 
 # Values p and r get used a lot, so i made a function call for them.
 
