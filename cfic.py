@@ -46,6 +46,8 @@ def si():
         finalq = input(f"You had a principal amount of ${p}, an interest rate of {r*100}%, and this rate has been applied for {t} years. Is this correct? y/n: ")
         if finalq == "y":
             print(f"\n--------------------> Your new balance would be ${round(final, 2)}\n")
+            print("\n-------------------- Running again. Type exit to end the program. --------------------\n")
+            setup()
         elif finalq == "n":
             print("\n--------------------> Looks like some of the information was incorrectly typed. Please try again.\n")
             si()
