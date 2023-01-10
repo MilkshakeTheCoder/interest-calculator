@@ -1,4 +1,9 @@
-import error
+from cfic import setup
 
-if ValueError:
-    print("enter an actual val")
+def errorHandler():
+    try:
+        setup()
+    except ValueError:
+        print("Wrong value buddy.")
+    except TypeError:
+        print("Wrong type buddy.")

@@ -5,7 +5,6 @@
 
 import math
 import matplotlib.pyplot as plt
-import error
 
 # CURRENT: --V
 # Solves for balance (A) with given rate, principal, time, (optionally: compound rate).
@@ -17,6 +16,7 @@ import error
 # Reuse variables via function
 # Use PyPlot to graph per year and rate all that
 # Possibly add "modes" for different types of interest, so that the user doesn't have to constantly fill out the y/n answers.
+# Add Error Handler
 
 # Values p and r get used a lot, so i made a function call for them.
 def pr():
