@@ -3,8 +3,6 @@
 # I: Interest
 # C: Calculator
 
-import math
-import matplotlib.pyplot as plt
 from info.formulas import *
 
 # CURRENT: --V
@@ -19,9 +17,6 @@ from info.formulas import *
 # Use PyPlot to graph per year and rate all that
 # Possibly add "modes" for different types of interest, so that the user doesn't have to constantly fill out the y/n answers.
 # Add Error Handler
-# Move math function to /info
-
-# Values p and r get used a lot, so i made a function call for them.
 
 def si():
     # Asks user just confirming that they wanted simple interest not compounded.
