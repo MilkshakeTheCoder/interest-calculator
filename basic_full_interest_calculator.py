@@ -26,13 +26,13 @@ def si():
     # Gathering values...
     p = int(input("What is your depoist/initial amount? "))
     r = float(input("What is your interest rate as a percentage? "))
-    rr=float(r/100)
+    r=float(r/100)
     t = int(input("How long has this interest been applied (in years)? "))
     # Interest eqaution.
-    final = (p*(1+(rr*t)))
+    final = (p*(1+(r*t)))
     # Checking if the values inputted are correct --V
     def si_check():
-        finalq = input(f"You had a principal amount of ${p}, an interest rate of {rr*100}%, and this rate has been applied for {t} years. Is this correct? y/n: ")
+        finalq = input(f"You had a principal amount of ${p}, an interest rate of {r*100}%, and this rate has been applied for {t} years. Is this correct? y/n: ")
         if finalq == "y":
             print(f"\n--------------------> Your new balance would be ${round(final, 2)}\n")
         elif finalq == "n":
@@ -48,21 +48,21 @@ def si():
 def nc():
     p = int(input("What is your depoist/initial amount? "))
     r = float(input("What is your interest rate as a percentage? "))
-    rr = float(r/100)
+    r = float(r/100)
     n = int(input("How many times is your money being compounded per year (1, 2, 4, 12, 52, 365)? "))
     ct = int(input("How long (in years) has this been compounding? "))
     # t changed to ct because if I am to reuse this varible via a function in the future, it should not be confused with t, which is for simple, not compounded interest. it has been changed for nc and cc.
-    final = (p*((1+(rr/n))**(n*ct)))
-    print(f"Your balance after {ct} years, with an interest rate of {rr*100}% and a compounding rate of {n} times a year, is ${round(final, 2)}")
+    final = (p*((1+(r/n))**(n*ct)))
+    print(f"Your balance after {ct} years, with an interest rate of {r*100}% and a compounding rate of {n} times a year, is ${round(final, 2)}")
 
 def cc():
     p = int(input("What is your depoist/initial amount? "))
     r = float(input("What is your interest rate as a percentage? "))
-    rr = float(r/100)
+    r = float(r/100)
     e = math.e
     ct = int(input("How long (in years) has this been compounding? "))
-    final = (p*(e**(rr*ct)))
-    print(f"Your balance after {ct} years, with an interest rate of {rr*100}% and continuous compounding, is ${round(final, 2)}")
+    final = (p*(e**(r*ct)))
+    print(f"Your balance after {ct} years, with an interest rate of {r*100}% and continuous compounding, is ${round(final, 2)}")
 
 def compoundfunc():
     setupvar2 = input("Are you compounding continuously? y/n: ")
