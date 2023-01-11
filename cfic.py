@@ -13,10 +13,10 @@ from info.formulas import *
 
 # TO-DO: --V
 # Add a monthly/yearly report feature
-# Reuse variables via function
 # Use PyPlot to graph per year and rate all that
 # Possibly add "modes" for different types of interest, so that the user doesn't have to constantly fill out the y/n answers.
 # Add Error Handler
+# Add Tkinter GUI support
 
 def si():
     # Asks user just confirming that they wanted simple interest not compounded.
