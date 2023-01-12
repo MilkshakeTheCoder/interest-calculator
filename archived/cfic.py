@@ -87,6 +87,7 @@ def nc():
 def cc():
     # Asks user just confirming that they wanted simple interest not compounded.
     ccback = input("Do you want to compute continually compounded interest? y/n: ")
+    ccback = ccback.lower()
     if ccback == "y":
         print("Ok, continuing... ")
     elif ccback == "n":

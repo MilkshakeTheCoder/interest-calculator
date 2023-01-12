@@ -1,0 +1,14 @@
+List of sources used throughout this project:
+
+Tkinter Tutorials and Walkthroughs
+
+https://realpython.com/python-gui-tkinter/
+https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/button.html
+https://www.pythontutorial.net/tkinter/tkinter-command/
+https://www.tutorialspoint.com/python/tk_entry.htm
+https://www.tutorialspoint.com/how-to-update-a-python-tkinter-label-widget
+https://www.tutorialspoint.com/how-to-handle-a-button-click-event-in-tkinter
+https://www.plus2net.com/python/tkinter-place.php
+https://stackoverflow.com/questions/2395431/using-tkinter-in-python-to-edit-the-title-bar
+
+^^^ These were mostly used to learn parameters and other basic tutorials.

@@ -1,6 +1,6 @@
 # copy of cfic, testing modes
 
-from info.formulas import *
+from archived.info.formulas import *
 
 # CURRENT: --V
 # Solves for balance (A) with given rate, principal, time, (optionally: compound rate).
@@ -139,3 +139,13 @@ from info.formulas import *
 #         setup()
 
 # setup()
+
+# def setup():
+#     setupvar = input("What interest are you calculating? Simple, Compounded, or Compounded Continually? (s, c, cc")
+#     if setupvar == 's':
+        
+
+####
+#### END ----> SWITCHING TO tkintertest.py
+
+####
