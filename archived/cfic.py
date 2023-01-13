@@ -4,6 +4,7 @@
 # C: Calculator
 
 from info.formulas import *
+import math
 
 # CURRENT: --V
 # Solves for balance (A) with given rate, principal, time, (optionally: compound rate).

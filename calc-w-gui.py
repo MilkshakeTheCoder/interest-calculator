@@ -55,7 +55,7 @@ def si():
 # Non-Continual Compound Interest
 def nc():
     window3 = tk.Tk()
-    window3.title("Simple Interest")
+    window3.title("Non-Continual Compound Interest")
     window3.geometry("700x450")
     def cal_nc():
         p=int(a.get())
@@ -88,7 +88,7 @@ def nc():
 
 def cc():
     window4 = tk.Tk()
-    window4.title("Simple Interest")
+    window4.title("Continual Compound Interest")
     window4.geometry("700x450")
     def cal_cc():
         p=int(a.get())
@@ -121,14 +121,14 @@ def setup():
     window.title("Interest Calculator")
     # Set the size of the tkinter window
     window.geometry("700x450")
-    ttk.Button(window, text="Simple Interest", command=si).pack(side=TOP, expand=YES)
-    ttk.Button(window, text="Non-Continual Compound Interest", command=nc).pack(side=TOP, expand=YES)
-    ttk.Button(window, text="Continual Compound Interest", command=cc).pack(side=TOP, expand=YES)
+    tk.Button(window, text="Simple Interest", font=("Calibri 20"), command=si).pack(side=TOP, expand=YES)
+    tk.Button(window, text="Non-Continual Compound Interest", font=("Calibri 20"), command=nc).pack(side=TOP, expand=YES)
+    tk.Button(window, text="Continual Compound Interest", font=("Calibri 20"), command=cc).pack(side=TOP, expand=YES)
     window.mainloop()
 
 setup()
 
-# What tkinter functions have I learned here?
+# What tkinter functions have I learned here? ^^^
 # Button
 # Label
 # Entry
