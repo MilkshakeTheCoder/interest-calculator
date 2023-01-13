@@ -12,7 +12,7 @@ Simply download the python file, and run it to begin the interest solving!
 
 ### NOTE: This currently only solves for "A" in the interest equation.
 
-Check # TO-DO: in the most recent file to see what will be added soon!
+Check # TO-DO: in [the most recent file](https://github.com/MilkshakeTheCoder/interest-calculator/blob/main/calc-w-gui.py) to see what will be added soon!
 
 ## Built With
 - [Python](https://www.python.org/) - The programming language used
