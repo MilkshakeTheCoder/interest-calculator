@@ -25,31 +25,32 @@ def si():
     window2 = tk.Tk()
     window2.title("Simple Interest")
     window2.geometry("700x450")
+    window2.configure(bg = "#E7E058")
     def cal_si():
         p=int(a.get())
         r=float(b.get())
         r=float(r/100)
         t=int(c.get())
         simple_interest=(p*(1+(r*t)))
-        label.config(text=simple_interest)
+        label.config(text=simple_interest, background="#E7E058")
     # Create an tk.Entry widget and label for p
-    Label(window2, text="Principal Amount", font=('Calibri 10'), padx= 20, pady= 20).pack()
-    a=tk.Entry(window2, width=35,)
+    Label(window2, text="Principal Amount", font=('Rockwell 10'), padx= 20, pady= 20, bg = "#E7E058").pack()
+    a=tk.Entry(window2, width=35)
     a.pack()
     # Create an tk.Entry widget and label for r
-    Label(window2, text="Interest Rate (without `%` sign)", font=('Calibri 10'), padx= 20, pady= 20).pack()
+    Label(window2, text="Interest Rate (without `%` sign)", font=('Rockwell 10'), padx= 20, pady= 20, bg = "#E7E058").pack()
     b=tk.Entry(window2, width=35)
     b.pack()
     # Create an tk.Entry widget and label for t
-    Label(window2, text="How long has rate been applied (in years)?", font=('Calibri 10'), padx= 20, pady= 20).pack()
+    Label(window2, text="How long has rate been applied (in years)?", font=('Rockwell 10'), padx= 20, pady= 20, bg = "#E7E058").pack()
     c=tk.Entry(window2, width=35)
     c.pack()
 
-    label=ttk.Label(window2, text="Interest: ", font=('Calibri 15'))
-    label.pack(pady=20)
+    label=ttk.Label(window2, text="Interest: ", font=('Rockwell 15'), background="#E7E058")
+    label.pack(pady=20, padx=20)
 
     ttk.Button(window2, text="Calculate Simple Interest", command=cal_si).pack()
-    ttk.Button(window2, text="Back 🔙", command=lambda:[window2.destroy(),setup()]).pack()
+    ttk.Button(window2, text="Back 🔙", command=lambda:[window2.destroy(),setup()]).pack(pady=10)
     window2.mainloop()
 
 # Non-Continual Compound Interest
@@ -67,20 +68,20 @@ def nc():
         label.config(text=nc_interest)
 
     # Create an tk.Entry widget
-    Label(window3, text="Principal Amount", font=('Calibri 10'), padx= 20, pady= 20).pack()
+    Label(window3, text="Principal Amount", font=('Rockwell 10'), padx= 20, pady= 20).pack()
     a=tk.Entry(window3, width=35,)
     a.pack()
-    Label(window3, text="Interest Rate (without `%` sign)", font=('Calibri 10'), padx= 20, pady= 20).pack()
+    Label(window3, text="Interest Rate (without `%` sign)", font=('Rockwell 10'), padx= 20, pady= 20).pack()
     b=tk.Entry(window3, width=35)
     b.pack()
-    Label(window3, text="How many times is this money being compounded per year (1, 2, 4, 12, 52, 365)?", font=('Calibri 10'), padx= 20, pady= 20).pack()
+    Label(window3, text="How many times is this money being compounded per year (1, 2, 4, 12, 52, 365)?", font=('Rockwell 10'), padx= 20, pady= 20).pack()
     c=tk.Entry(window3, width=35)
     c.pack()
-    Label(window3, text="How long has this money been compounding (in years)?", font=('Calibri 10'), padx= 20, pady= 20).pack()
+    Label(window3, text="How long has this money been compounding (in years)?", font=('Rockwell 10'), padx= 20, pady= 20).pack()
     d=tk.Entry(window3, width=35)
     d.pack()
 
-    label=ttk.Label(window3, text="Interest: ", font=('Calibri 15'))
+    label=ttk.Label(window3, text="Interest: ", font=('Rockwell 15'))
     label.pack(pady=20)
 
     ttk.Button(window3, text="Calculate Compounded Interest", command=cal_nc).pack()
@@ -97,17 +98,17 @@ def cc():
         cc_interest=(p*(e**(r*t)))
         label.config(text=cc_interest)
     # Create an tk.Entry widget
-    Label(window4, text="Principal Amount", font=('Calibri 10'), padx= 20, pady= 20).pack()
+    Label(window4, text="Principal Amount", font=('Rockwell 10'), padx= 20, pady= 20).pack()
     a=tk.Entry(window4, width=35,)
     a.pack()
-    Label(window4, text="Interest Rate (without `%` sign)", font=('Calibri 10'), padx= 20, pady= 20).pack()
+    Label(window4, text="Interest Rate (without `%` sign)", font=('Rockwell 10'), padx= 20, pady= 20).pack()
     b=tk.Entry(window4, width=35)
     b.pack()
-    Label(window4, text="How long has this money been compounding (in years)?", font=('Calibri 10'), padx= 20, pady= 20).pack()
+    Label(window4, text="How long has this money been compounding (in years)?", font=('Rockwell 10'), padx= 20, pady= 20).pack()
     d=tk.Entry(window4, width=35)
     d.pack()
 
-    label=ttk.Label(window4, text="Interest: ", font=('Calibri 15'))
+    label=ttk.Label(window4, text="Interest: ", font=('Rockwell 15'))
     label.pack(pady=20)
 
     ttk.Button(window4, text="Calculate Continual Compounded Interest", command=cal_cc).pack()
@@ -115,14 +116,15 @@ def cc():
 
 def setup():
     # Create an instance of tkinter frame or window
-    window=tk.Tk()
-    window.title("Interest Calculator")
-    window.geometry("700x450")
+    root=tk.Tk()
+    root.title("Interest Calculator")
+    root.geometry("700x450")
+    root.configure(bg = '#57D0F3')
     # Set the size of the tkinter window
-    tk.Button(window, text="Simple Interest", font=("Calibri 15"), command=lambda:[window.destroy(), si()]).pack(side=TOP, expand=YES)
-    tk.Button(window, text="Non-Continual Compound Interest", font=("Calibri 15"), command=lambda:[window.destroy(), nc()]).pack(side=TOP, expand=YES)
-    tk.Button(window, text="Continual Compound Interest", font=("Calibri 15"), command=lambda:[window.destroy(), cc()]).pack(side=TOP, expand=YES)
-    window.mainloop()
+    tk.Button(root, text="Simple Interest", font=("Rockwell 15"), command=lambda:[root.destroy(), si()], bg='#19B3E0').pack(side=TOP, expand=YES)
+    tk.Button(root, text="Non-Continual Compound Interest", font=("Rockwell 15"), command=lambda:[root.destroy(), nc()], bg='#19B3E0').pack(side=TOP, expand=YES)
+    tk.Button(root, text="Continual Compound Interest", font=("Rockwell 15"), command=lambda:[root.destroy(), cc()], bg='#19B3E0').pack(side=TOP, expand=YES)
+    root.mainloop()
 
 setup()
 
