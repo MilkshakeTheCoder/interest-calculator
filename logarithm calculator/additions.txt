@@ -1,0 +1,5 @@
+exp growth and decay functions
+full log functions
+graph ability
+plot points
+solve for x
