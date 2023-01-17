@@ -20,6 +20,10 @@ from tkinter import ttk
 # for e
 import math
 
+window=tk.Tk()
+window.title("Interest Calculator")
+window.geometry("700x450")
+
 # si function
 def si():
     window2 = tk.Tk()
@@ -87,9 +91,7 @@ def nc():
     ttk.Button(window3, text="Back 🔙", command=setup).pack()
 
 def cc():
-    window4 = tk.Tk()
-    window4.title("Continual Compound Interest")
-    window4.geometry("700x450")
+    frame3 = Frame(window)
     def cal_cc():
         p=int(a.get())
         r=float(b.get())
@@ -99,31 +101,29 @@ def cc():
         cc_interest=(p*(e**(r*t)))
         label.config(text=cc_interest)
     # Create an tk.Entry widget
-    Label(window4, text="Principal Amount", font=('Calibri 10'), padx= 20, pady= 20).pack()
-    a=tk.Entry(window4, width=35,)
+    Label(frame3, text="Principal Amount", font=('Calibri 10'), padx= 20, pady= 20).pack()
+    a=tk.Entry(frame3, width=35,)
     a.pack()
-    Label(window4, text="Interest Rate (without `%` sign)", font=('Calibri 10'), padx= 20, pady= 20).pack()
-    b=tk.Entry(window4, width=35)
+    Label(frame3, text="Interest Rate (without `%` sign)", font=('Calibri 10'), padx= 20, pady= 20).pack()
+    b=tk.Entry(frame3, width=35)
     b.pack()
-    Label(window4, text="How long has this money been compounding (in years)?", font=('Calibri 10'), padx= 20, pady= 20).pack()
-    d=tk.Entry(window4, width=35)
+    Label(frame3, text="How long has this money been compounding (in years)?", font=('Calibri 10'), padx= 20, pady= 20).pack()
+    d=tk.Entry(frame3, width=35)
     d.pack()
 
-    label=ttk.Label(window4, text="Interest: ", font=('Calibri 15'))
+    label=ttk.Label(frame3, text="Interest: ", font=('Calibri 15'))
     label.pack(pady=20)
 
-    ttk.Button(window4, text="Calculate Continual Compounded Interest", command=cal_cc).pack()
-    ttk.Button(window4, text="Back 🔙", command=setup).pack()
+    ttk.Button(frame3, text="Calculate Continual Compounded Interest", command=cal_cc).pack()
+    ttk.Button(frame3, text="Back 🔙", command=setup).pack()
 
 def setup():
     # Create an instance of tkinter frame or window
-    window=tk.Tk()
-    window.title("Interest Calculator")
+    
     # Set the size of the tkinter window
-    window.geometry("700x450")
-    tk.Button(window, text="Simple Interest", font=("Calibri 20"), command=si).pack(side=TOP, expand=YES)
-    tk.Button(window, text="Non-Continual Compound Interest", font=("Calibri 20"), command=nc).pack(side=TOP, expand=YES)
-    tk.Button(window, text="Continual Compound Interest", font=("Calibri 20"), command=cc).pack(side=TOP, expand=YES)
+    tk.Button(window, text="Simple Interest", font=("Calibri 15"), command=si).pack(side=TOP, expand=YES)
+    tk.Button(window, text="Non-Continual Compound Interest", font=("Calibri 15"), command=nc).pack(side=TOP, expand=YES)
+    tk.Button(window, text="Continual Compound Interest", font=("Calibri 15"), command=cc).pack(side=TOP, expand=YES)
     window.mainloop()
 
 setup()
