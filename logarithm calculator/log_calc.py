@@ -1,8 +1,6 @@
 import math
-import numbers
-import decimal
-import tkinter as tk
 from tkinter import *
+import tkinter as tk
 from tkinter import ttk
 
 def log():
@@ -15,14 +13,14 @@ def log():
         y = int(y2.get())
         log_with_base = math.log(y, b)
         label.config(text=log_with_base)
-    Label(window2, text="What is the log base?", font=('Rockwell 10'), padx= 20, pady= 20, background="#E7E058").pack()
+    tk.Label(window2, text="What is the log base?", font=('Rockwell 10'), padx= 20, pady= 20, background="#E7E058").pack()
     b2=tk.Entry(window2, width=35,)
     b2.pack()
     # Create an tk.Entry widget and label for r
-    Label(window2, text="What is the y value of the log?", font=('Rockwell 10'), padx= 20, pady= 20, background="#E7E058").pack()
+    tk.Label(window2, text="What is the y value of the log?", font=('Rockwell 10'), padx= 20, pady= 20, background="#E7E058").pack()
     y2=tk.Entry(window2, width=35)
     y2.pack()
-    label=ttk.Label(window2, text="X =  ", font=('Rockwell 15'), background="#E7E058")
+    label=tk.Label(window2, text="X =  ", font=('Rockwell 15'), background="#E7E058")
     label.pack(pady=20)
     ttk.Button(window2, text="Calculate Logarithm", command=cal_log).pack()
     ttk.Button(window2, text="Back 🔙", command=lambda:[window2.destroy(), setup()]).pack(pady=10)
@@ -38,10 +36,10 @@ def ln():
         y = int(y2.get())
         ln_e_base = math.log(y, b)
         label.config(text=ln_e_base)
-    Label(window3, text="What is the y value of the log?", font=('Rockwell 10'), padx= 20, pady= 20, background="#F36A4B").pack()
+    tk.Label(window3, text="What is the y value of the log?", font=('Rockwell 10'), padx= 20, pady= 20, background="#F36A4B").pack()
     y2=tk.Entry(window3, width=35)
     y2.pack()
-    label = Label(window3, text="X =  ", font=('Rockwell 15'), background="#F36A4B")
+    label = tk.Label(window3, text="X =  ", font=('Rockwell 15'), background="#F36A4B")
     label.pack(pady=20)
     ttk.Button(window3, text="Calculate Natural Log", command=cal_ln).pack()
     ttk.Button(window3, text="Back 🔙", command=lambda:[window3.destroy(), setup()]).pack(pady=10)
@@ -54,8 +52,8 @@ def setup():
     root.geometry("700x450")
     root.configure(background='#57D0F3')
     # Set the size of the tkinter window
-    tk.Button(root, text="Log with Base", font=("Rockwell 12"), command=lambda:[root.destroy(), log()], background='#19B3E0').pack(side=TOP, expand=YES)
-    tk.Button(root, text="Natural Log", font=("Rockwell 12"), command=lambda:[root.destroy(), ln()], background='#19B3E0').pack(side=TOP, expand=YES)
+    Button(root, text="Log with Base", font=("Rockwell 12"), command=lambda:[root.destroy(), log()], background='#19B3E0').pack(side=TOP, expand=YES)
+    Button(root, text="Natural Log", font=("Rockwell 12"), command=lambda:[root.destroy(), ln()], background='#19B3E0').pack(side=TOP, expand=YES)
     root.mainloop()
 
 setup()
