@@ -53,7 +53,7 @@ class IntrestCalculator:
         c=tk.Entry(root2, width=35)
         c.pack()
 
-        label=ttk.Label(root2, text="Interest: ", font=('Rockwell 15'), background="#E7E058")
+        label=ttk.Label(root2, text="Interest: ", font=('Rockwell 12'), background="#E7E058")
         label.pack(pady=20, padx=20)
 
         ttk.Button(root2, text="Calculate Simple Interest", command=cal_si).pack()
@@ -89,7 +89,7 @@ class IntrestCalculator:
         d=tk.Entry(root3, width=35)
         d.pack()
 
-        label=ttk.Label(root3, text="Interest: ", font=('Rockwell 15'), background="#4BF381")
+        label=ttk.Label(root3, text="Interest: ", font=('Rockwell 12'), background="#4BF381")
         label.pack(pady=20)
 
         ttk.Button(root3, text="Calculate Compounded Interest", command=cal_nc).pack()
@@ -120,7 +120,7 @@ class IntrestCalculator:
         d=tk.Entry(root4, width=35)
         d.pack()
 
-        label=ttk.Label(root4, text="Interest: ", font=('Rockwell 15'), background="#F36A4B")
+        label=ttk.Label(root4, text="Interest: ", font=('Rockwell 12'), background="#F36A4B")
         label.pack(pady=20)
 
         ttk.Button(root4, text="Calculate Continual Compounded Interest", command=cal_cc).pack()
@@ -133,20 +133,19 @@ class IntrestCalculator:
         root.geometry("800x550")
         root.configure(background='#57D0F3')
         # Set the size of the tkinter root
-        tk.Button(root, text="Simple Interest", font=("Rockwell 15"), command=lambda:[root.destroy(), self.si()], background='#19B3E0').pack(side=TOP, expand=YES)
-        tk.Button(root, text="Non-Continual Compound Interest", font=("Rockwell 15"), command=lambda:[root.destroy(), self.nc()], background='#19B3E0').pack(side=TOP, expand=YES)
-        tk.Button(root, text="Continual Compound Interest", font=("Rockwell 15"), command=lambda:[root.destroy(), self.cc()], background='#19B3E0').pack(side=TOP, expand=YES)
+        Button(root, text="Simple Interest", font=("Rockwell 12"), command=lambda:[root.destroy(), self.si()], background='#19B3E0').pack(side=TOP, expand=YES)
+        Button(root, text="Non-Continual Compound Interest", font=("Rockwell 12"), command=lambda:[root.destroy(), self.nc()], background='#19B3E0').pack(side=TOP, expand=YES)
+        Button(root, text="Continual Compound Interest", font=("Rockwell 12"), command=lambda:[root.destroy(), self.cc()], background='#19B3E0').pack(side=TOP, expand=YES)
+        Button(root, text="Back 🔙", font=("Rockwell 12"), command=lambda:[root.destroy(), main()], background='#19B3E0').pack(side=TOP, expand=YES)
         root.mainloop()
 
-
-setupint = IntrestCalculator()
 # create instance
-# setup.setup()
+# setupint.setup()
 # referencing InterestCalulator.setup()
 
 #the above code can be written like this: setup = IntrestCalculator().setup() ; it has the reference and the function call
 
-class LogCalculator:
+class LogarithmCalculator:
     def __init__(self) -> None:
         pass
 
@@ -167,7 +166,7 @@ class LogCalculator:
         tk.Label(root2, text="What is the y value of the log?", font=('Rockwell 10'), padx= 20, pady= 20, background="#E7E058").pack()
         y2=tk.Entry(root2, width=35)
         y2.pack()
-        label=tk.Label(root2, text="X =  ", font=('Rockwell 15'), background="#E7E058")
+        label=tk.Label(root2, text="X =  ", font=('Rockwell 12'), background="#E7E058")
         label.pack(pady=20)
         ttk.Button(root2, text="Calculate Logarithm", command=cal_log).pack()
         ttk.Button(root2, text="Back 🔙", command=lambda:[root2.destroy(), self.setup()]).pack(pady=10)
@@ -186,7 +185,7 @@ class LogCalculator:
         tk.Label(root3, text="What is the y value of the log?", font=('Rockwell 10'), padx= 20, pady= 20, background="#F36A4B").pack()
         y2=tk.Entry(root3, width=35)
         y2.pack()
-        label = tk.Label(root3, text="X =  ", font=('Rockwell 15'), background="#F36A4B")
+        label = tk.Label(root3, text="X =  ", font=('Rockwell 12'), background="#F36A4B")
         label.pack(pady=20)
         ttk.Button(root3, text="Calculate Natural Log", command=cal_ln).pack()
         ttk.Button(root3, text="Back 🔙", command=lambda:[root3.destroy(), self.setup()]).pack(pady=10)
@@ -194,32 +193,29 @@ class LogCalculator:
         
     def setup(self):
         # Create an instance of tkinter frame or root
-        root=tk.Tk()
-        root.title("Logarithm Calculator")
-        root.geometry("800x550")
-        root.configure(background='#57D0F3')
+        root4=tk.Tk()
+        root4.title("Logarithm Calculator")
+        root4.geometry("800x550")
+        root4.configure(background='#57D0F3')
         # Set the size of the tkinter root
-        Button(root, text="Log with Base", font=("Rockwell 12"), command=lambda:[root.destroy(), self.log()], background='#19B3E0').pack(side=TOP, expand=YES)
-        Button(root, text="Natural Log", font=("Rockwell 12"), command=lambda:[root.destroy(), self.ln()], background='#19B3E0').pack(side=TOP, expand=YES)
-        root.mainloop()
+        Button(root4, text="Log with Base", font=("Rockwell 12"), command=lambda:[root4.destroy(), self.log()], background='#19B3E0').pack(side=TOP, expand=YES)
+        Button(root4, text="Natural Log", font=("Rockwell 12"), command=lambda:[root4.destroy(), self.ln()], background='#19B3E0').pack(side=TOP, expand=YES)
+        Button(root4, text="Back 🔙", font=("Rockwell 12"), command=lambda:[root4.destroy(), main()], background='#19B3E0').pack(side=TOP, expand=YES)
+        root4.mainloop()
 
-setuplog = LogCalculator()
+def main():
+    window = Tk()
+    window.title("calaculator")
+    window.geometry("800x550")
+    window.configure(background="#E7E058")
+    interest_calc = IntrestCalculator()
+    log_calc = LogarithmCalculator()
+    Button(window, text="Interest Calulator", font=("Rockwell 12"), command=lambda:[window.destroy(), interest_calc.setup()], background=).pack(side=TOP, expand=YES)
+    Button(window, text="Logarithm Calulator", font=("Rockwell 12"), command=lambda:[window.destroy(), log_calc.setup()]).pack(side=TOP, expand=YES, pady=10)
+    Button(window, text="Close", font=("Rockwell 12"), command=window.quit()).pack(side=TOP, expand=YES, pady=10)
+    window.mainloop()
 
-class Unit6Calculator:
-    def __init__(self) -> None:
-        pass
-
-    def rootthing(self):
-        root = tk.Tk()
-        root.title("Logarithm Calcuator")
-        root.geometry("800x550")
-        root.configure(background="#E7E058")
-        ttk.Button(root, text="Interest Calulator", command=setupint.setup()).pack()
-        ttk.Button(root, text="Logarithm Calulator", command=setuplog.setup()).pack(pady=10)
-        ttk.Button(root, text="Close 🔙", command=root.destroy()).pack(pady=10)
-        root.mainloop()
-
-run = Unit6Calculator().rootthing()
+main()
 
 # Added basic class methods and self parameter for the function for better grouping
 
